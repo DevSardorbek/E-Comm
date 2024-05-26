@@ -1,0 +1,50 @@
+.supfooter__wrapper {
+  background-color: #bcddfe;
+  padding-top: 154px;
+  padding-bottom: 80px;
+  .supfooter__section {
+    display: grid;
+    grid-template-columns: 4fr 2fr 2fr;
+    flex-wrap: wrap;
+    h3 {
+      font-family: Poppins;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 27px;
+      text-align: left;
+      color: #22262a;
+      margin-bottom: 20px;
+    }
+    p {
+      font-family: sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 14.62px;
+      text-align: left;
+      color: #22262a;
+    }
+    h4 {
+      font-family: Poppins;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 21px;
+      text-align: left;
+      color: #22262a;
+      width: 150px;
+    }
+    .supfooter__section-logo {
+      width: 250px;
+    }
+    .supfooter__section-follow {
+      p {
+        width: 200px;
+      }
+      .media1 {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        margin-top: 20px;
+      }
+    }
+  }
+}

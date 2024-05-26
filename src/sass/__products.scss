@@ -1,0 +1,173 @@
+.products__wrapper {
+  margin-bottom: 90px;
+  .container1 {
+    max-width: 1342px;
+    margin: 0 auto;
+  }
+  .products__title {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+    margin-top: 63px;
+    h1 {
+      font-family: sans-serif;
+      font-size: 35px;
+      font-weight: 600;
+      line-height: 52.5px;
+      text-align: center;
+      color: #22262a;
+    }
+    .products__category {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      button {
+        font-family: Poppins;
+        color: #22262a;
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 33px;
+        text-align: left;
+        border-radius: 3px;
+        border-bottom: 2px solid #fff;
+        background-color: transparent;
+        transition: 0.3s;
+        &:hover {
+          border-bottom: 2px solid #33a0ff;
+          color: #33a0ff;
+        }
+      }
+    }
+  }
+  .products__section {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    justify-content: center;
+    flex-wrap: wrap;
+    .product__card {
+      width: 298px;
+      border: 3px solid #f6f7f8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      .product__card-img {
+        transition: 0.4s;
+        &:hover {
+          div {
+            bottom: 96px;
+            opacity: 0.7;
+          }
+        }
+        div {
+          position: absolute;
+          bottom: 0px;
+          left: 0;
+          width: 100%;
+          background-color: #d7e3e6;
+          opacity: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 140px;
+          gap: 12px;
+
+          button {
+            border-radius: 50%;
+            border: 2px solid #33a0ff;
+            padding: 10px;
+            background: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            svg {
+              color: #33a0ff;
+              font-weight: 600;
+              font-size: 20px;
+            }
+          }
+        }
+      }
+      .img1 {
+        width: 301px;
+        object-fit: contain;
+      }
+      .product__card-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        .card__star {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+        }
+        h1 {
+          font-family: sans-serif;
+          font-size: 18px;
+          font-weight: 700;
+          line-height: 27px;
+          letter-spacing: 0.5px;
+          text-align: left;
+          color: #223263;
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 1;
+        }
+        div {
+          display: flex;
+          align-items: center;
+          gap: 13px;
+          h2 {
+            font-family: Poppins;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 32.4px;
+            letter-spacing: 0.5px;
+            text-align: left;
+            color: #40bfff;
+          }
+          del {
+            font-family: Poppins;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 21px;
+            letter-spacing: 0.5px;
+            text-align: left;
+            color: #9098b1;
+          }
+          h3 {
+            font-family: Poppins;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 21px;
+            letter-spacing: 0.5px;
+            text-align: left;
+            color: #fb7181;
+          }
+        }
+      }
+    }
+  }
+  .learnMore {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 24px;
+    button {
+      font-family: Poppins;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 30px;
+      text-align: left;
+      color: #33a0ff;
+      background: transparent;
+      border-bottom: 3px solid #33a0ff;
+    }
+  }
+}

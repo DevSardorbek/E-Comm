@@ -1,0 +1,26 @@
+.search__wrapper {
+  margin-bottom: 95px;
+  .search__section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    margin: 0 auto;
+    border: 2px solid #bcddfe;
+    input {
+      flex: 1;
+      padding: 21px;
+      border: none;
+    }
+    button {
+      padding: 17px 27px;
+      font-family: Poppins;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 30px;
+      text-align: left;
+      color: #fff;
+      background-color: #40bfff;
+    }
+  }
+}

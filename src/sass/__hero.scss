@@ -1,0 +1,20 @@
+.hero__wrapper {
+  position: relative;
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+  .hero__section {
+    position: absolute;
+    top: 45%;
+    h1 {
+      font-family: sans-serif;
+      font-size: 64px;
+      font-weight: 700;
+      line-height: 96px;
+      letter-spacing: 0.5px;
+      text-align: left;
+      color: #fff;
+    }
+  }
+}

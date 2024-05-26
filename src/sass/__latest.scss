@@ -1,0 +1,58 @@
+.latest__wrapper {
+  margin-bottom: 110px;
+  .latest__title {
+    display: flex;
+    justify-content: center;
+    h1 {
+      font-family: Poppins;
+      font-size: 34px;
+      font-weight: 600;
+      line-height: 51px;
+      text-align: left;
+      color: #22262a;
+    }
+  }
+  .latest__section {
+    margin-top: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 35px;
+    .latest__section-card {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      width: 390px;
+      .latest__card-info {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        span {
+          font-family: Poppins;
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 27px;
+          text-align: left;
+          color: #c1c8ce;
+        }
+        p {
+          font-family: sans-serif;
+          font-size: 18px;
+          font-weight: 400;
+          line-height: 21.92px;
+          text-align: left;
+          color: #22262a;
+        }
+        h3 {
+          font-family: Poppins;
+          font-size: 22px;
+          font-weight: 600;
+          line-height: 33px;
+          text-align: left;
+          color: #22262a;
+        }
+      }
+    }
+  }
+}
