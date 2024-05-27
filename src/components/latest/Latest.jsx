@@ -1,8 +1,8 @@
 import React from "react";
 import "@/sass/__latest.scss";
-import limg1 from "../../../src/assets/lImg1.png";
-import limg2 from "../../../src/assets/limg2.png";
-import limg3 from "../../../src/assets/limg3.png";
+import limg1 from "@/assets/lImg1.png";
+import limg2 from "@/assets/lImg2.png";
+import limg3 from "@/assets/lImg3.png";
 import Image from "next/image";
 const Latest = () => {
   return (
