@@ -11,7 +11,7 @@ import Search from "@/components/search/Search";
 import { getData } from "@/fetch";
 
 export default async function Home() {
-  let data = await getData("products");
+  let data = await getData("products?limit=10");
   return (
     <main>
       <Hero />
@@ -22,8 +22,6 @@ export default async function Home() {
       <Latest />
       <Featured />
       <Search />
-      <SupFooter />
-      <SubFooter />
     </main>
   );
 }

@@ -1,0 +1,70 @@
+.contactTouch__wrapper {
+  .contactTouch__section {
+    margin-bottom: 126px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    -webkit-box-shadow: 4px 3px 6px 0px rgba(181, 170, 181, 0.61);
+    -moz-box-shadow: 4px 3px 6px 0px rgba(181, 170, 181, 0.61);
+    box-shadow: 4px 3px 6px 0px rgba(181, 170, 181, 0.61);
+    .contactTouch__adress {
+      position: relative;
+      div {
+        position: absolute;
+        top: 30%;
+        left: 86px;
+      }
+      h1 {
+        font-family: sans-serif;
+        font-size: 48px;
+        font-weight: 600;
+        line-height: 56.35px;
+        text-align: left;
+        color: #fff;
+        margin-bottom: 20px;
+      }
+      P {
+        font-family: sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 18.78px;
+        margin-top: 20px;
+        text-align: left;
+        color: #fff;
+      }
+
+      //   background-image: url("/src/assets/touchbg.png");
+      //   background-position: center;
+      //   background-repeat: no-repeat;
+      //   background-size: cover;
+    }
+    .contactTouch__input {
+      display: flex;
+      flex-direction: column;
+      gap: 21px;
+
+      label {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+      }
+      input {
+        width: 100%;
+        width: 500px;
+        padding: 22px 27px;
+        border: 1px solid #33a0ff;
+        border-radius: 2px;
+      }
+      textarea {
+        width: 500px;
+        height: 229px;
+        resize: none;
+        padding: 40px 27px;
+        border: 1px solid #33a0ff;
+        border-radius: 2px;
+      }
+    }
+  }
+}

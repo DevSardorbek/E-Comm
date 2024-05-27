@@ -8,11 +8,14 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { memo } from "react";
 
 import star from "@/assets/star.png";
+import Link from "next/link";
 const Products = (data) => {
   let cardItem = data?.data.map((el) => (
     <div key={el.id} className="product__card">
       <div className="product__card-img">
-        <Image className="img1" src={el.image} width={301} height={276} />
+        <Link href={`/product/${el.id}`}>
+          <Image className="img1" src={el.image} width={301} height={276} />
+        </Link>
         <div>
           <button>
             <FaRegHeart />

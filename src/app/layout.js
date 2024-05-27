@@ -2,6 +2,8 @@ import { Inter } from "next/font/google";
 import "@/sass/style.scss";
 import SubHeader from "@/components/header/SubHeader";
 import SupHeader from "@/components/header/SupHeader";
+import SubFooter from "@/components/footer/SubFooter";
+import SupFooter from "@/components/footer/SupFooter";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,6 +19,8 @@ export default function RootLayout({ children }) {
         <SubHeader />
         <SupHeader />
         {children}
+        <SupFooter />
+        <SubFooter />
       </body>
     </html>
   );

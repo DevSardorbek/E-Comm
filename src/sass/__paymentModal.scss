@@ -1,0 +1,141 @@
+.paymentModal__wrapper {
+  max-width: 1021px;
+  margin: 0 auto;
+  background-color: aqua;
+  .paymentModal__title {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 41px;
+    .paymentModal__back {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      button {
+        background: transparent;
+        svg {
+          color: #40bfff;
+          font-size: 34px;
+        }
+      }
+    }
+    h1 {
+      text-align: center;
+      font-family: Raleway;
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 37.57px;
+      color: #40bfff;
+    }
+  }
+  .paymentModal__section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 134px;
+    gap: 32px;
+    .paymentModal__input-name {
+      display: flex;
+      align-items: center;
+      gap: 72px;
+      input {
+        width: 380.99px;
+        gap: 0px;
+        border-radius: 10px;
+        opacity: 0.3px;
+        padding: 14px;
+        background-color: #dfdede;
+        border: none;
+      }
+    }
+    .paymentModal__input-email {
+      display: flex;
+      align-items: center;
+      gap: 72px;
+      input {
+        width: 380.99px;
+        gap: 0px;
+        border-radius: 10px;
+        opacity: 0.3px;
+        padding: 14px;
+        background-color: #dfdede;
+        border: none;
+      }
+    }
+    .paymentModal__method {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 72px;
+      div {
+        flex-basis: 50%;
+        h2 {
+          font-family: Raleway;
+          font-size: 20px;
+          font-weight: 600;
+          line-height: 23.48px;
+          text-align: left;
+          color: #40bfff;
+        }
+        label {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 21px 17px;
+          border-radius: 2px;
+          transition: 0.3s;
+          input {
+            width: 24px;
+            height: 24px;
+          }
+          &:hover {
+            background-color: #ebf0ff;
+          }
+          p {
+            display: flex;
+            align-items: center;
+            gap: 17px;
+            font-family: Poppins;
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 18px;
+            letter-spacing: 0.5px;
+            text-align: left;
+            color: #223263;
+
+            svg {
+              color: #40bfff;
+            }
+          }
+        }
+      }
+      textarea {
+        flex-basis: 50%;
+        width: 518px;
+        height: 122.52px;
+        border-radius: 10px;
+        opacity: 0.3px;
+        padding: 26px 14px;
+        background-color: #dfdede;
+        resize: none;
+      }
+    }
+    button {
+      margin-bottom: 78px;
+      font-family: sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 32.74px;
+      letter-spacing: -0.02em;
+      text-align: center;
+      padding: 8px 21px;
+      width: 338px;
+      height: 70px;
+      box-shadow: 0px 10px 40px 0px #f8a17033;
+      background-color: #33a0ff;
+      border-radius: 10px;
+      color: #fff;
+    }
+  }
+}

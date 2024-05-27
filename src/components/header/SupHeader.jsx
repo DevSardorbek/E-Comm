@@ -37,7 +37,7 @@ const SupHeader = () => {
               <span>0</span>
               <FaRegHeart />
             </Link>
-            <Link href={"/"}>
+            <Link href={"/cart"}>
               <span>0</span>
               <FiShoppingCart />
             </Link>

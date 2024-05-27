@@ -21,7 +21,7 @@ const SubHeader = () => {
             <Link href={"/"}>BAGS</Link>
             <Link href={"/"}>SNEAKERS</Link>
             <Link href={"/"}>BELT</Link>
-            <Link href={"/"}>CONTACT</Link>
+            <Link href={"/contact"}>CONTACT</Link>
           </div>
           <button onClick={() => serBurger(!burger)} className="burger">
             <TfiMenuAlt />
