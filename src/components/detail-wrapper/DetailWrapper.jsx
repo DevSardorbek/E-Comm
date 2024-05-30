@@ -12,13 +12,25 @@ import { FaRegHeart } from "react-icons/fa6";
 import "@/sass/__detailWrapper.scss";
 import face from "@/assets/face.png";
 import twit from "@/assets/twit.png";
-import relImg1 from "@/assets/relatedImg1.png";
-import relImg2 from "@/assets/relatedImg2.png";
-import relImg3 from "@/assets/relatedImg3.png";
-import relImg4 from "@/assets/relatedImg4.png";
 
-const DetailWrapper = ({ data }) => {
+const DetailWrapper = ({ data, limitPro }) => {
   console.log(data);
+  let card = limitPro?.map((el) => (
+    <div key={el.id} className="related__card">
+      <div className="related__card-img">
+        <Image src={el.image} width={301} height={276} />
+      </div>
+      <div className="related__card-info">
+        <h3>{el.title}</h3>
+        <Image src={star} />
+        <div className="related__card-price">
+          <h4>{el.price}</h4>
+          <del>{el.price * 2}</del>
+          <span>50% Off</span>
+        </div>
+      </div>
+    </div>
+  ));
   return (
     <div className="detail__wrapper">
       <div className="container">
@@ -169,64 +181,7 @@ const DetailWrapper = ({ data }) => {
           <div className="related__title">
             <h1>RELATED PRODUCTS</h1>
           </div>
-          <div className="related__cards">
-            <div className="related__card">
-              <div className="related__card-img">
-                <Image src={relImg1} />
-              </div>
-              <div className="related__card-info">
-                <h3>Nike Air Max 270 React</h3>
-                <Image src={star} />
-                <div className="related__card-price">
-                  <h4>$299,43</h4>
-                  <del>$534,33</del>
-                  <span>24% Off</span>
-                </div>
-              </div>
-            </div>
-            <div className="related__card">
-              <div className="related__card-img">
-                <Image src={relImg1} />
-              </div>
-              <div className="related__card-info">
-                <h3>Nike Air Max 270 React</h3>
-                <Image src={star} />
-                <div className="related__card-price">
-                  <h4>$299,43</h4>
-                  <del>$534,33</del>
-                  <span>24% Off</span>
-                </div>
-              </div>
-            </div>
-            <div className="related__card">
-              <div className="related__card-img">
-                <Image src={relImg1} />
-              </div>
-              <div className="related__card-info">
-                <h3>Nike Air Max 270 React</h3>
-                <Image src={star} />
-                <div className="related__card-price">
-                  <h4>$299,43</h4>
-                  <del>$534,33</del>
-                  <span>24% Off</span>
-                </div>
-              </div>
-            </div>
-            <div className="related__card">
-              <div className="related__card-img">
-                <Image src={relImg1} />
-              </div>
-              <div className="related__card-info">
-                <h3>Nike Air Max 270 React</h3>
-                <Image src={star} />
-                <div className="related__card-price">
-                  <h4>$299,43</h4>
-                  <del>$534,33</del>
-                  <span>24% Off</span>
-                </div>
-              </div>
-            </div>
-          </div>
+          <div className="related__cards">{card}</div>
         </div>
       </div>
     </div>

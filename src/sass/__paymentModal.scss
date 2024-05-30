@@ -1,7 +1,10 @@
 .paymentModal__wrapper {
   max-width: 1021px;
   margin: 0 auto;
-  background-color: aqua;
+  background-color: #ebf0ff;
+  position: fixed;
+  top: 5%;
+  left: 25%;
   .paymentModal__title {
     display: flex;
     flex-direction: column;

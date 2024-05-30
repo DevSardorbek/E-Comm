@@ -1,0 +1,15 @@
+.wishlistWrapper {
+  .wishlistWrapper__line {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+  }
+  h1 {
+    display: none;
+  }
+  button {
+    display: none;
+  }
+}

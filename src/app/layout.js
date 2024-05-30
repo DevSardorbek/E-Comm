@@ -4,6 +4,9 @@ import SubHeader from "@/components/header/SubHeader";
 import SupHeader from "@/components/header/SupHeader";
 import SubFooter from "@/components/footer/SubFooter";
 import SupFooter from "@/components/footer/SupFooter";
+import { Provider } from "react-redux";
+import { store } from "@/lib/store";
+import StoreProvider from "./StoreProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,11 +19,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <SubHeader />
-        <SupHeader />
-        {children}
-        <SupFooter />
-        <SubFooter />
+        <StoreProvider store={store}>
+          <SupHeader />
+          <SubHeader />
+          {children}
+          <SupFooter />
+          <SubFooter />
+        </StoreProvider>
       </body>
     </html>
   );

@@ -368,6 +368,12 @@
         border: 3px solid #f6f7f8;
         gap: 10px;
         border-radius: 8px;
+        width: 301px;
+        .related__card-img {
+          img {
+            width: 100%;
+          }
+        }
         .related__card-info {
           display: flex;
           flex-direction: column;
@@ -381,6 +387,10 @@
             letter-spacing: 0.5px;
             text-align: left;
             color: #223263;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
           }
           h4 {
             font-family: Poppins;

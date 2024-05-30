@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import "@/sass/__supHeader.scss";
 import { FaRegUser } from "react-icons/fa";
@@ -6,8 +7,11 @@ import { FiShoppingCart } from "react-icons/fi";
 import { FiHome } from "react-icons/fi";
 
 import Link from "next/link";
+import { useSelector } from "react-redux";
 
 const SupHeader = () => {
+  let selector = useSelector((s) => s.wishlist.value);
+  let cartSelector = useSelector((s) => s.cart.value);
   return (
     <div className="supHeader__wrapper">
       <div className="container">
@@ -30,15 +34,15 @@ const SupHeader = () => {
                 <FiHome />
               </Link>
             </div>
-            <Link href={"/"}>
+            <Link href={"/login"}>
               <FaRegUser />
             </Link>
-            <Link href={"/"}>
-              <span>0</span>
+            <Link href={"/wishlist"}>
+              <span>{selector.length}</span>
               <FaRegHeart />
             </Link>
             <Link href={"/cart"}>
-              <span>0</span>
+              <span>{cartSelector.length}</span>
               <FiShoppingCart />
             </Link>
             <div className="supHeader__items-search">

@@ -2,14 +2,21 @@
 import React from "react";
 import "@/sass/__products.scss";
 import Image from "next/image";
-import pro from "@/assets/heroP1.png";
 import { FaRegHeart } from "react-icons/fa6";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { memo } from "react";
+import { toogleLike } from "@/lib/slice/wishlistSlice";
+import { BsHeart } from "react-icons/bs";
+import { FaHeart } from "react-icons/fa6";
+import { addToCart } from "@/lib/slice/cartSlice";
 
 import star from "@/assets/star.png";
 import Link from "next/link";
+import { useDispatch, useSelector } from "react-redux";
 const Products = (data) => {
+  let wishlist = useSelector((state) => state.wishlist.value);
+  let cart = useSelector((state) => state.cart.value);
+  const dispatch = useDispatch();
   let cardItem = data?.data.map((el) => (
     <div key={el.id} className="product__card">
       <div className="product__card-img">
@@ -17,10 +24,14 @@ const Products = (data) => {
           <Image className="img1" src={el.image} width={301} height={276} />
         </Link>
         <div>
-          <button>
-            <FaRegHeart />
+          <button onClick={() => dispatch(toogleLike(el))}>
+            {wishlist?.some((item) => item.id === el.id) ? (
+              <FaHeart style={{ color: "red" }} />
+            ) : (
+              <BsHeart />
+            )}
           </button>
-          <button>
+          <button onClick={() => dispatch(addToCart(el))}>
             <AiOutlineShoppingCart />
           </button>
         </div>

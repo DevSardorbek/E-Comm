@@ -6,16 +6,16 @@ import { FiCreditCard } from "react-icons/fi";
 import { TbBrandPaypalFilled } from "react-icons/tb";
 import { BsBank } from "react-icons/bs";
 
-const PaymentModal = () => {
+const PaymentModal = ({ onClose }) => {
   return (
     <div className="paymentModal__wrapper">
       <div className="container">
         <div className="paymentModal__title">
           <div className="paymentModal__back">
-            <button>
+            <button onClick={onClose}>
               <MdOutlineArrowBack />
             </button>
-            <button>
+            <button onClick={onClose}>
               <CgClose />
             </button>
           </div>
