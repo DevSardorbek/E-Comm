@@ -3,20 +3,20 @@
   padding-top: 154px;
   padding-bottom: 80px;
   .supfooter__section {
-    display: grid;
-    grid-template-columns: 4fr 2fr 2fr;
+    display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
     h3 {
       font-family: Poppins;
       font-size: 18px;
-      font-weight: 500;
+      font-weight: 600;
       line-height: 27px;
       text-align: left;
       color: #22262a;
       margin-bottom: 20px;
     }
     p {
-      font-family: sans-serif;
+      font-family: Poppins;
       font-size: 12px;
       font-weight: 400;
       line-height: 14.62px;

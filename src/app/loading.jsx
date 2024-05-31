@@ -7,7 +7,6 @@ const Loading = () => {
     <div className="loading">
       <div className="container">
         <Image src={loading} />
-        <h1>Loading...</h1>
       </div>
     </div>
   );

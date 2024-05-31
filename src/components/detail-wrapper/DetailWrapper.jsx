@@ -12,9 +12,17 @@ import { FaRegHeart } from "react-icons/fa6";
 import "@/sass/__detailWrapper.scss";
 import face from "@/assets/face.png";
 import twit from "@/assets/twit.png";
+import { toogleLike } from "@/lib/slice/wishlistSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { BsHeart } from "react-icons/bs";
+import { FaHeart } from "react-icons/fa6";
+import { addToCart } from "@/lib/slice/cartSlice";
 
 const DetailWrapper = ({ data, limitPro }) => {
-  console.log(data);
+  const wish = useSelector((state) => state.wishlist.value);
+  let cart = useSelector((state) => state.cart.value);
+
+  const dispatch = useDispatch();
   let card = limitPro?.map((el) => (
     <div key={el.id} className="related__card">
       <div className="related__card-img">
@@ -57,7 +65,7 @@ const DetailWrapper = ({ data, limitPro }) => {
             </div>
           </div>
           <div className="detail__section-info">
-            <div>
+            <div className="detail__in">
               <h2>{data.title}</h2>
               <div className="detail__rating">
                 <Image src={star} />
@@ -111,12 +119,16 @@ const DetailWrapper = ({ data, limitPro }) => {
                   <button>+</button>
                 </div>
                 <div className="cart">
-                  <button>
+                  <button onClick={() => dispatch(addToCart(data))}>
                     <p>Add To Cart</p>
                     <RiShoppingCart2Fill />
                   </button>
-                  <button>
-                    <FaRegHeart />
+                  <button onClick={() => dispatch(toogleLike(data))}>
+                    {wish?.some((item) => item.id === data.id) ? (
+                      <FaHeart style={{ color: "red" }} />
+                    ) : (
+                      <BsHeart />
+                    )}
                   </button>
                 </div>
               </div>

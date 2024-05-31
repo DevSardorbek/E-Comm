@@ -4,16 +4,23 @@ import React from "react";
 import "@/sass/__wishlistWrapper.scss";
 import { useSelector } from "react-redux";
 import Products from "../products/Products";
+import Empty from "../empty/Empty";
 const WishlistWrapper = () => {
   let selector = useSelector((s) => s.wishlist.value);
   return (
     <div className="wishlistWrapper">
       <div className="container">
-        <div className="wishlistWrapper__line">
-          <Link href={"/"}>Home</Link> / <p>Wishlist</p>
-        </div>
+        {selector.length ? (
+          <div>
+            <div className="wishlistWrapper__line">
+              <Link href={"/"}>Home</Link> / <p>Wishlist</p>
+            </div>
+            <Products data={selector} />
+          </div>
+        ) : (
+          <Empty />
+        )}
       </div>
-      <Products data={selector} />
     </div>
   );
 };

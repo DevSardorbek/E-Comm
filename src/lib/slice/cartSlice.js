@@ -2,40 +2,31 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  value: JSON.parse(localStorage.getItem("cart")) || [],
+  value: [],
 };
 const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
     addToCart: (state, action) => {
-      let index = state.value.findIndex((i) => i.id === action.payload.id);
-      if (index < 0) {
-        state.value = [...state.value, { ...action.payload, quantity: 1 }];
-      } else {
-        state.value = state.value.map((item, inx) =>
-          inx === index ? { ...item, quantity: item.quantity + 1 } : item
-        );
-      }
-      localStorage.setItem("cart", JSON.stringify(state.value));
+      state.value = action.payload;
+      // let index = state.value.findIndex((i) => i.id === action.payload.id);
+      // if (index < 0) {
+      //   state.value = [...state.value, { ...action.payload, quantity: 1 }];
+      // } else {
+      //   state.value = state.value.map((item, inx) =>
+      //     inx === index ? { ...item, quantity: item.quantity + 1 } : item
+      //   );
+      // }
     },
     removeItemFromCart: (state, action) => {
-      state.value = state.value.filter((i) => i.id !== action.payload.id);
-      localStorage.setItem("cart", JSON.stringify(state.value));
+      state.value = action.payload;
     },
     incrementCartQuantity: (state, action) => {
-      let index = state.value.findIndex((i) => i.id === action.payload.id);
-      state.value = state.value.map((item, inx) =>
-        inx === index ? { ...item, quantity: item.quantity + 1 } : item
-      );
-      localStorage.setItem("cart", JSON.stringify(state.value));
+      state.value = action.payload;
     },
     decrementCartQuantity: (state, action) => {
-      let index = state.value.findIndex((i) => i.id === action.payload.id);
-      state.value = state.value.map((item, inx) =>
-        inx === index ? { ...item, quantity: item.quantity - 1 } : item
-      );
-      localStorage.setItem("cart", JSON.stringify(state.value));
+      state.value = action.payload;
     },
     deleteAllCart: (state) => {
       state.value = [];

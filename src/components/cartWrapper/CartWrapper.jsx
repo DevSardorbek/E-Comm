@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "@/sass/__cartWrapper.scss";
 import { IoCloseSharp } from "react-icons/io5";
 import Image from "next/image";
@@ -11,25 +11,48 @@ import {
   decrementCartQuantity,
 } from "@/lib/slice/cartSlice";
 import PaymentModal from "../paymentModal/PaymentModal";
-
 const CartWrapper = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const cart = useSelector((state) => state.cart.value);
+  let cart = useSelector((state) => state.cart.value);
+  console.log(cart);
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    dispatch(
+      removeItemFromCart(JSON.parse(localStorage.getItem("cart")) || [])
+    );
+    dispatch(
+      incrementCartQuantity(JSON.parse(localStorage.getItem("cart")) || [])
+    );
+    dispatch(
+      decrementCartQuantity(JSON.parse(localStorage.getItem("cart")) || [])
+    );
+  }, []);
+
   const handleRemove = (item) => {
-    dispatch(removeItemFromCart(item));
+    cart = cart.filter((i) => i.id !== item.id);
+    dispatch(removeItemFromCart(cart));
+    localStorage.setItem("cart", JSON.stringify(cart));
   };
 
   const handleIncrement = (item) => {
-    dispatch(incrementCartQuantity(item));
+    let index = cart.findIndex((i) => i.id === item.id);
+    cart = cart.map((item, inx) =>
+      inx === index ? { ...item, quantity: item.quantity + 1 } : item
+    );
+
+    dispatch(incrementCartQuantity(cart));
+    localStorage.setItem("cart", JSON.stringify(cart));
   };
 
   const handleDecrement = (item) => {
     if (item.quantity > 1) {
-      dispatch(decrementCartQuantity(item));
-    } else {
-      handleRemove(item);
+      let index = cart.findIndex((i) => i.id === item.id);
+      cart = cart.map((item, inx) =>
+        inx === index ? { ...item, quantity: item.quantity - 1 } : item
+      );
+      dispatch(decrementCartQuantity(cart));
+      localStorage.setItem("cart", JSON.stringify(cart));
     }
   };
 
@@ -108,7 +131,7 @@ const CartWrapper = () => {
               </div>
               <div className="ship__total">
                 <h2>TOTAL</h2>
-                <h2>${totalPrice + 20}</h2>
+                <h2>${totalPrice.toFixed(2)}</h2>
               </div>
               <button onClick={handleCheckout}>Check Out</button>
             </div>
